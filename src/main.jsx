@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 
 // Import the Redux store, which contains the application's state and reducers.
 import store from "./redux/store.js";
+import { HelmetProvider } from "react-helmet-async";
 
 // Render the React application into the DOM.
 // - `createRoot`: Initializes React's rendering system in the DOM element with the ID "root".
@@ -20,6 +21,8 @@ import store from "./redux/store.js";
 //   to access the Redux store via hooks like `useSelector` and `useDispatch`.
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </Provider>
 );

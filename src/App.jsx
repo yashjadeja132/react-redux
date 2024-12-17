@@ -3,6 +3,8 @@ import React from "react";
 
 // Import a custom hook that fetches user data and provides user state, loading, and error information.
 import useFetchUserData from "./hooks/userHooks/useFetchUserData";
+import MetaTags from "./components/MetaTags";
+import { appPage } from "./utils/metaTags";
 
 // Define the main App component.
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
   // Otherwise, show a message indicating no data is available.
   return (
     <div>
+      <MetaTags {...appPage} />
       <h1>User Data</h1>
       {user ? (
         <div>
